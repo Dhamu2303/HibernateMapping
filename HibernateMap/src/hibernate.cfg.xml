@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection properties -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dhamu</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- SQL dialect for MySQL -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Automatically create/update database schema -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Show SQL queries in console -->
+        <property name="show_sql">true</property>
+
+        <!-- Specify the context for the current session -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Mapping file -->
+        <mapping resource="question.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
